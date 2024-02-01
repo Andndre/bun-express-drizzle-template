@@ -16,5 +16,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use("/api", apiRoute)
 
 app.listen(3000, 'localhost', () => {
-	console.log('Server is running on port http://localhost:3000')
+	console.log('Server is running on http://localhost:3000')
+
+	console.log(`METHOD\tSTATUS\tURL`)
 });
