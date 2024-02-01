@@ -1,0 +1,24 @@
+{
+  "name": "bun-test-2",
+  "module": "index.ts",
+  "type": "module",
+  "devDependencies": {
+    "@types/bun": "latest",
+    "drizzle-kit": "^0.20.13"
+  },
+  "scripts": {
+    "db:pull": "drizzle-kit introspect:mysql",
+    "db:migrate": "drizzle-kit generate:mysql",
+    "db:push": "drizzle-kit push:mysql"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "dotenv": "^16.4.1",
+    "drizzle-orm": "^0.29.3",
+    "express": "^4.18.2",
+    "mysql2": "^3.9.1"
+  }
+}
