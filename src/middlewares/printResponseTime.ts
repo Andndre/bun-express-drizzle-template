@@ -43,7 +43,7 @@ const handler: Handler = (req, res, next) => {
 	const start = process.hrtime()
 	res.on('close', () => {
 		const timeTaken = getDurationInMilliseconds(start)
-		console.log(`${methodWithColor(req.method)}\t${statusCodeWithColor(res.statusCode)}\t${req.url} ${chalk.gray(`took ${timeWithColor(timeTaken)}`)}`)
+		console.log(`${methodWithColor(req.method)}\t${statusCodeWithColor(res.statusCode)}\t${req.originalUrl} ${chalk.gray(`took ${timeWithColor(timeTaken)}`)}`)
 	})
 	next()
 }
