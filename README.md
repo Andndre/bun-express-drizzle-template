@@ -1,9 +1,9 @@
 # BUN Express + Drizzle Template
 
 ## Bun
-Bun is a fast all-in-one JavaScript runtime.
+Bun is a fast all-in-one JavaScript runtime ([Learn More](https://bun.sh/))
 ## Drizzle ORM
-Drizzle is a lightweight ORM that supports Typescript and works with Bun.
+Drizzle is a lightweight ORM that supports Typescript and works with Bun ([Learn More](https://orm.drizzle.team/)).
 
 ## Get started:
 ### Clone the repository
@@ -13,7 +13,7 @@ git clone https://github.com/andndre/bun-express-drizzle-template.git your-proje
 # go to the project directory
 cd your-project-name
 # remove the git repository
-rm -rf.git
+rm -rf git
 ```
 
 ### Install packages
