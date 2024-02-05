@@ -1,8 +1,8 @@
 import chalk from "chalk"
 import type { Handler } from "express"
-import { getDurationInMilliseconds } from "../utils/time"
+import { TimeHelper } from "@/api/helpers"
 
-function methodWithColor(method: string): string {
+const methodWithColor = (method: string): string => {
 	switch (method) {
 		case 'GET':
 			return chalk.greenBright(method)
@@ -17,7 +17,7 @@ function methodWithColor(method: string): string {
 	}
 }
 
-function statusCodeWithColor(statusCode: number): string {
+const statusCodeWithColor = (statusCode: number): string => {
 	if (statusCode >= 200 && statusCode < 300) {
 		return chalk.greenBright(statusCode)
 	} else if (statusCode >= 300 && statusCode < 400) {
@@ -28,7 +28,7 @@ function statusCodeWithColor(statusCode: number): string {
 	return chalk.red(statusCode)
 }
 
-function timeWithColor(time: number): string {
+const timeWithColor = (time: number): string => {
 	if (time < 100) {
 		return chalk.greenBright(`${time}ms`)
 	} else if (time < 500) {
@@ -42,7 +42,7 @@ function timeWithColor(time: number): string {
 const handler: Handler = (req, res, next) => {
 	const start = process.hrtime()
 	res.on('close', () => {
-		const timeTaken = getDurationInMilliseconds(start)
+		const timeTaken = TimeHelper.getDurationInMilliseconds(start)
 		console.log(`${methodWithColor(req.method)}\t${statusCodeWithColor(res.statusCode)}\t${req.originalUrl} ${chalk.gray(`took ${timeWithColor(timeTaken)}`)}`)
 	})
 	next()

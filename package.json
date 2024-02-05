@@ -7,6 +7,7 @@
     "drizzle-kit": "^0.20.13"
   },
   "scripts": {
+		"dev": "bun --watch run src/index.ts",
     "db:pull": "drizzle-kit introspect:mysql",
     "db:migrate": "drizzle-kit generate:mysql",
     "db:push": "drizzle-kit push:mysql"

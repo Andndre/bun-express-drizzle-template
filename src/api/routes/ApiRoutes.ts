@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { api } from './controllers'
+import { ApiController } from '@/api/controllers'
 
 const router = Router({
 	strict: true,
 	caseSensitive: true,
 })
 
-router.get('/', api.index)
+router.get('/', ApiController.index)
 
 export default router
