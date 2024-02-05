@@ -2,9 +2,9 @@ import { defineConfig } from 'drizzle-kit'
 import 'dotenv/config'
 
 export default defineConfig({
- 	schema: "./src/Database/Schema.ts",
+ 	schema: "./src/api/database/Schema.ts",
 	driver: 'mysql2',
-	out: './src/Database/Migrations',
+	out: './src/api/database/migrations',
 	dbCredentials: {
 		database: process.env.DATABASE_NAME!,
 		host: process.env.DATABASE_HOST!,
